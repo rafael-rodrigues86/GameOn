@@ -1,0 +1,44 @@
+.modal-btn {
+  font-size: 145%;
+  background: $color-btn;
+  display: flex;
+  margin: auto;
+  padding: 2em;
+  color: $color-white;
+  padding: 0.75rem 2.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-btn--hover;
+  }
+}
+
+.btn-signup {
+  @include button;
+}
+
+.btn-signup {
+  outline: none;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  padding: 15px 23px;
+  margin: 0;
+  margin-top: 59px;
+}
+
+.hero-section > .btn-signup {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .hero-content .btn-signup {
+    display: none;
+  }
+
+  .hero-section > .btn-signup {
+    display: block;
+    margin: 32px auto 10px;
+    padding: 12px 35px;
+  }
+}
