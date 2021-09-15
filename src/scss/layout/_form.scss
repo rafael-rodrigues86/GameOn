@@ -1,3 +1,50 @@
+.formData {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+
+  & i {
+    position: absolute;
+    top: 51px;
+    right: 10px;
+    background-color: black;
+    visibility: hidden;
+  }
+
+  &.success input {
+    border: 3px solid $color-form--success;
+  }
+
+  &.error input {
+    border: 3px solid $color-form--error;
+  }
+
+  &.success i.fa-check-circle {
+    visibility: visible;
+    color: $color-form--success;
+    background-color: $color-white;
+  }
+
+  &.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: $color-form--error;
+    background-color: $color-white;
+  }
+
+  & small {
+    visibility: hidden;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.error small {
+    visibility: visible;
+    color: $color-form--error;
+  }
+}
+
 label {
   font-family: $font-default;
   font-size: 17px;
@@ -18,24 +65,24 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: $color-form--error;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-.formData[data-error-visible='true']::after {
-  opacity: 1;
-}
-.formData[data-error-visible='true'] .text-control {
-  border: 2px solid $color-form--error;
-}
+// .formData[data-error]::after {
+//   content: attr(data-error);
+//   font-size: 0.4em;
+//   color: $color-form--error;
+//   display: block;
+//   margin-top: 7px;
+//   margin-bottom: 7px;
+//   text-align: right;
+//   line-height: 0.3;
+//   opacity: 0;
+//   transition: 0.3s;
+// }
+// .formData[data-error-visible='true']::after {
+//   opacity: 1;
+// }
+// .formData[data-error-visible='true'] .text-control {
+//   border: 2px solid $color-form--error;
+// }
 /*
   input[data-error]::after {
       content: attr(data-error);
@@ -63,6 +110,12 @@ input {
   top: -1px;
   transition: 0.3s;
 }
+
+.checkbox-label .checkbox-icon--error,
+.checkbox2-label .checkbox-icon--error {
+  border: 2px solid $color-form--error;
+}
+
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
   content: '';
@@ -86,8 +139,13 @@ input {
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
 }
+
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: $color-form-checkbox;
+}
+
+.checkbox-input-checkbox + .checkbox2-label .checkbox-icon--error {
+  background: $color-form--error;
 }
 .checkbox2-label .checkbox-icon {
   border-radius: 4px;

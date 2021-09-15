@@ -262,7 +262,6 @@ main {
   font-size: 16px; }
 
 .bground {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -271,6 +270,12 @@ main {
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4); }
+
+.hidden {
+  display: none;
+  -webkit-transition: display 1s;
+  -o-transition: display 1s;
+  transition: display 1s; }
 
 .content {
   margin: 5% auto;
@@ -282,10 +287,114 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px; }
+  .content.shake {
+    -webkit-animation: shake 0.5s linear 1;
+            animation: shake 0.5s linear 1; }
+  .content.stay {
+    -webkit-animation-name: stay;
+            animation-name: stay; }
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@-webkit-keyframes stay {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes stay {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
 
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto; }
+
+.content-successful {
+  display: none;
+  margin: 5% auto;
+  width: 100%;
+  max-width: 500px;
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding-top: 10px; }
+
+.formData {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px; }
+  .formData i {
+    position: absolute;
+    top: 51px;
+    right: 10px;
+    background-color: black;
+    visibility: hidden; }
+  .formData.success input {
+    border: 3px solid #2ecc71; }
+  .formData.error input {
+    border: 3px solid #e54858; }
+  .formData.success i.fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+    background-color: #fff; }
+  .formData.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #e54858;
+    background-color: #fff; }
+  .formData small {
+    visibility: hidden;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .formData.error small {
+    visibility: visible;
+    color: #e54858; }
 
 label {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
@@ -306,26 +415,6 @@ input {
   border-radius: 8px;
   font-size: 20px;
   height: 48px; }
-
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
-
-.formData[data-error-visible='true']::after {
-  opacity: 1; }
-
-.formData[data-error-visible='true'] .text-control {
-  border: 2px solid #e54858; }
 
 /*
   input[data-error]::after {
@@ -356,6 +445,10 @@ input {
   -o-transition: 0.3s;
   transition: 0.3s; }
 
+.checkbox-label .checkbox-icon--error,
+.checkbox2-label .checkbox-icon--error {
+  border: 2px solid #e54858; }
+
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
   content: '';
@@ -385,6 +478,9 @@ input {
 
 .checkbox-input:checked + .checkbox2-label .checkbox-icon {
   background: #279e7a; }
+
+.checkbox-input-checkbox + .checkbox2-label .checkbox-icon--error {
+  background: #e54858; }
 
 .checkbox2-label .checkbox-icon {
   border-radius: 4px;
@@ -494,6 +590,30 @@ input {
             transform: translateY(-150px); }
   to {
     opacity: 1; } }
+
+.close-content {
+  -webkit-animation-name: modalclose;
+          animation-name: modalclose;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+
+@-webkit-keyframes modalclose {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px); } }
+
+@keyframes modalclose {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    -webkit-transform: translateY(-150px);
+            transform: translateY(-150px); } }
 
 .close {
   position: absolute;

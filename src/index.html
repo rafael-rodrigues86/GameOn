@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/modal.css" />
 
     <!--Font-Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/937458d88c.js" crossorigin="anonymous"></script>
 
     <!--Google Fonts-->
     <link
@@ -53,12 +53,14 @@
         <div class="hero-img">
           <img src="./images/bg_img.jpg" alt="img" />
         </div>
+
         <button class="btn-signup modal-btn">
           sign up now
         </button>
+
       </div>
 
-      <div class="bground">
+      <div class="bground hidden">
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
@@ -70,55 +72,70 @@
             >
               <div
                 class="formData">
-                <label>First Name</label><br>
+                <label for="first">First Name</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small class="error-message"></small>
+                <br>
               </div>
               <div
                 class="formData">
-                <label>Last Name</label><br>
+                <label for="last">Last Name</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small class="error-message"></small>
+                <br>
               </div>
               <div
                 class="formData">
-                <label>Email</label><br>
+                <label for="email">Email</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small class="error-message"></small>
+                <br>
               </div>
               <div
                 class="formData">
-                <label>Birthdate</label><br>
+                <label for="birthdate">Birthdate</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                />
+                <small class="error-message"></small>
+                <br>
               </div>
               <div
                 class="formData">
-                <label>How many tournaments have you attended? </label><br>
+                <label for="quantity">How many tournaments have you attended? </label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <small class="error-message"></small>
               </div>
               <p class="text-label">Which location?</p>
               <div
                 class="formData">
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location1"
                   name="location"
@@ -129,7 +146,7 @@
                   New York</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location2"
                   name="location"
@@ -140,7 +157,7 @@
                   San Francisco</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location3"
                   name="location"
@@ -151,7 +168,7 @@
                   Seattle</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location4"
                   name="location"
@@ -162,7 +179,7 @@
                   Chicago</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location5"
                   name="location"
@@ -173,7 +190,7 @@
                   Boston</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-radio"
                   type="radio"
                   id="location6"
                   name="location"
@@ -183,12 +200,14 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+              <small class="error-message"></small>
+
               </div>
 
               <div
                 class="formData">
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input-checkbox"
                   type="checkbox"
                   id="checkbox1"
                   checked
@@ -198,11 +217,13 @@
                   I have read and I agree to GameOn's terms and conditions.
                 </label>
                 <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <input class="checkbox-input" type="checkbox" id="checkbox2"  />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Please sign me up to be notified about future events.
                 </label>
+              <small class="error-message"></small>
+
                 <br>
               </div>
               <input
@@ -213,6 +234,16 @@
               />
             </form>
           </div>
+        </div>
+        <div class="content-successful">
+          <span class="close"></span>
+          <p>Thank you for submitting your registration details</p>
+          <input
+                class="btn-submit"
+                type="submit"
+                class="button"
+                value="Close"
+              />
         </div>
       </div>
     </main>
