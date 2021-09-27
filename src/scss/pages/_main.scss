@@ -104,3 +104,23 @@ main {
     }
   }
 }
+
+@media screen and (max-width: 540px) {
+  .hero {
+    &-content {
+      padding: 0px;
+      min-width: unset;
+    }
+
+    &-headline {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    &-text {
+      font-size: 1rem;
+      margin-top: 37px;
+      letter-spacing: -1px;
+    }
+  }
+}

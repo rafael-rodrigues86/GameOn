@@ -22,7 +22,8 @@
   &.success i.fa-check-circle {
     visibility: visible;
     color: $color-form--success;
-    background-color: $color-white;
+    // background-color: $color-white;
+    background-color: transparent;
   }
 
   &.error i.fa-exclamation-circle {

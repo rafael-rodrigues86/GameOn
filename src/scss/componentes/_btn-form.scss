@@ -15,3 +15,9 @@
     background: $color-btn--hover;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .btn-submit {
+    margin-bottom: 4rem;
+  }
+}

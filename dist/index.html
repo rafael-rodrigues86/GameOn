@@ -20,7 +20,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="./images/Logo.png" width="auto" height="auto" />
+      <img class="header-image" alt="logo" src="./images/Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
 
@@ -142,7 +142,7 @@
                   value="New York"
                 />
                 <label class="checkbox-label" for="location1">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   New York</label
                 >
                 <input
@@ -153,7 +153,7 @@
                   value="San Francisco"
                 />
                 <label class="checkbox-label" for="location2">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   San Francisco</label
                 >
                 <input
@@ -164,7 +164,7 @@
                   value="Seattle"
                 />
                 <label class="checkbox-label" for="location3">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   Seattle</label
                 >
                 <input
@@ -175,7 +175,7 @@
                   value="Chicago"
                 />
                 <label class="checkbox-label" for="location4">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   Chicago</label
                 >
                 <input
@@ -186,7 +186,7 @@
                   value="Boston"
                 />
                 <label class="checkbox-label" for="location5">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   Boston</label
                 >
                 <input
@@ -197,7 +197,7 @@
                   value="Portland"
                 />
                 <label class="checkbox-label" for="location6">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-radio"></span>
                   Portland</label
                 >
               <small class="error-message"></small>
@@ -213,13 +213,13 @@
                   checked
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-checkbox"></span>
                   I have read and I agree to GameOn's terms and conditions.
                 </label>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2"  />
                 <label class="checkbox2-label" for="checkbox2">
-                  <span class="checkbox-icon"></span>
+                  <span class="checkbox-icon checkbox-icon-checkbox"></span>
                   Please sign me up to be notified about future events.
                 </label>
               <small class="error-message"></small>
@@ -235,16 +235,22 @@
             </form>
           </div>
         </div>
+
         <div class="content-successful">
-          <span class="close"></span>
-          <p>Thank you for submitting your registration details</p>
+          <span class="close close-successful"></span>
+          <p>
+            <span>Thank you for</span><br>
+            <span>submitting your</span><br>
+            <span>registration details</span>
+            </p>
           <input
-                class="btn-submit"
+                class="btn-submit btn-close btn-submit-successful"
                 type="submit"
                 class="button"
                 value="Close"
               />
         </div>
+
       </div>
     </main>
     <footer>

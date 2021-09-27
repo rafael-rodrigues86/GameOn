@@ -1,0 +1,17 @@
+.content-disappear {
+  animation-name: contentDisappearAndGoUp;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes contentDisappearAndGoUp {
+  50% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-1500px);
+  }
+}

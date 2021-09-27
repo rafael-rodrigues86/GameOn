@@ -5,7 +5,8 @@
 .bground {
   // display: none;
   position: fixed;
-  z-index: 1;
+  // z-index: 1;
+  z-index: 5;
   left: 0;
   top: 0;
   height: 100%;
@@ -30,47 +31,7 @@
   position: relative;
   color: $color-white;
   padding-top: 10px;
-
-  &.shake {
-    animation: shake 0.5s linear 1;
-  }
-
-  &.stay {
-    animation-name: stay;
-  }
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-@keyframes stay {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+  z-index: 10;
 }
 
 .modal-body {
@@ -79,14 +40,71 @@
 }
 
 .content-successful {
-  display: none;
+  // display: none;
+  height: 942px;
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
   background: $color-background-form;
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
+  // position: relative;
+  position: absolute;
   color: $color-white;
   padding-top: 10px;
+  // top: -976px;
+  top: 0;
+  left: 414px;
+  z-index: 7;
+  opacity: 0;
+
+  & p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 37px;
+
+    & span:first-child {
+      margin-left: 22px;
+      margin-right: auto;
+    }
+
+    & span:nth-child(3) {
+      margin-left: 6px;
+    }
+
+    & span:last-child {
+      margin-left: -9px;
+    }
+  }
+}
+
+.btn-close {
+  position: relative;
+  top: 93%;
+}
+
+@media screen and (max-width: 768px) {
+  .content-successful {
+    left: 134px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .bground {
+    top: 65px;
+    background-color: unset;
+  }
+
+  .content-successful {
+    left: 0;
+    position: fixed;
+    top: 61px;
+    height: 655px;
+  }
+
+  .btn-close {
+    top: 88%;
+  }
 }

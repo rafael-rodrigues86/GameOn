@@ -60,6 +60,19 @@
     display: block;
     text-align: left;
   }
+
+  .header-image {
+    width: 17rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .fa-bars {
+    width: 1rem;
+    color: red;
+    margin-right: 1.5rem;
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 540px) {
@@ -70,5 +83,19 @@
     float: right;
     display: block;
     margin-top: -15px;
+  }
+
+  .header-image {
+    width: 10rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
+  .fa-bars {
+    margin-top: 1.2rem;
+    width: 1rem;
+    color: red;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
   }
 }

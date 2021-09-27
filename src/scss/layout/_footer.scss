@@ -24,3 +24,10 @@ footer {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .copyrights {
+    margin-top: 10px;
+    margin-bottom: 48px;
+  }
+}

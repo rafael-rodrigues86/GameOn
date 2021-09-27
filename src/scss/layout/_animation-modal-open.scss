@@ -13,18 +13,15 @@
   }
 }
 
-.close-content {
-  animation-name: modalclose;
+.close-content-sucessful {
+  animation-name: modalclosesucessful;
   animation-duration: $modal-duration;
   animation-fill-mode: forwards;
 }
 
-@keyframes modalclose {
-  from {
-    opacity: 1;
-  }
+@keyframes modalclosesucessful {
   to {
     opacity: 0;
-    transform: translateY(-150px);
+    transform: translateY(-1500px);
   }
 }
