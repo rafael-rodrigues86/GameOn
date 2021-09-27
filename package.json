@@ -7,13 +7,17 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Rafael",
   "license": "ISC",
+  "homepage": "https://rafael-rodrigues86.github.io/GameOn",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
