@@ -83,7 +83,6 @@ function closeBackground(closeB) {
   setTimeout(function () {
     closeB.classList.remove('close-content');
     modalbg.classList.add('hidden');
-
     resetForm();
   }, 700);
 }
@@ -201,7 +200,6 @@ function handlesSubmitButtonClicked() {
     const errorOnTextInput = checkErrorOnTextInput(e);
     const errorOnRadio = checkErrorOnRadio(e);
     const errorOnTermsAndConditions = checkErrorOnTermsAndConditions(e);
-    console.log(errorOnTextInput, errorOnRadio, errorOnTermsAndConditions);
 
     if (errorOnTextInput && errorOnRadio && errorOnTermsAndConditions) {
       validationSuccessful(e);
@@ -210,8 +208,8 @@ function handlesSubmitButtonClicked() {
 }
 
 function checkErrorOnTextInput(e) {
-  for (const formDatum of formData) {
-    if (formDatum.classList.contains('error')) {
+  for (let i = 0; i < 5; i++) {
+    if (formData[i].classList.contains('error')) {
       e.preventDefault();
       shake();
       return false;
